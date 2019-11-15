@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    z-index: 1000000;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: white;
+}
+
+.active {
+    border-bottom: 1px solid white;
+}
+
+.landing {
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/images/landing.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.landing-content {
+    text-align: center;
+    color: white;
+    padding-top: 15vw;
+    padding-bottom: 15vw;
+}
+
+.landing-content > h1 {
+    font-size: 3em;
+}
