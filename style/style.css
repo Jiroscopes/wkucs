@@ -39,6 +39,38 @@ nav {
     font-size: 3em;
 }
 
+.custom-button {
+    background: transparent;
+    color: white;
+    padding: 7px 25px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.custom-button:hover {
+    background: #b01e24;
+    border-color: #b01e24;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s all ease;
+}
+
+.custom-button-footer {
+    background: #b01e24;
+    color: white;
+    padding: 7px 25px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.custom-button-footer:hover {
+    background: transparent;
+    border-color: #b01e24;
+    color: #b01e24;
+    text-decoration: none;
+    transition: 0.5s all ease;
+}
+
 .container-padding {
     padding: 50px 0px;
 }
