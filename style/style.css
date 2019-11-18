@@ -38,3 +38,19 @@ nav {
 .landing-content > h1 {
     font-size: 3em;
 }
+
+.container-padding {
+    padding: 50px 0px;
+}
+
+.resource-container {
+    padding: 50px 0px;
+}
+
+.tutors-home {
+    background: #b01e24;
+}
+
+.heading-white {
+    color: white;
+}
