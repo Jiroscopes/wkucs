@@ -8,15 +8,26 @@ nav {
     top: 0;
     right: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgb(247, 247, 247);
+}
+
+.container-fluid{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    overflow: hidden;
 }
 
 .nav-link {
-    color: white;
+    color: #b01e24;
+    padding: 10px 20px !important;
+}
+
+.nav-link:hover {
+    color: #6e1518;
 }
 
 .active {
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid #b01e24;
 }
 
 .landing {
@@ -105,4 +116,12 @@ nav {
 .tutor-info {
     padding-top: 25px;
     color: white;
+}
+
+.container-white {
+    background: white;
+}
+
+.nav-link:hover {
+    color: #b01e24;
 }
