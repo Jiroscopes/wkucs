@@ -43,7 +43,7 @@ nav {
     padding: 50px 0px;
 }
 
-.resource-container {
+.content-padding {
     padding: 50px 0px;
 }
 
@@ -52,5 +52,25 @@ nav {
 }
 
 .heading-white {
+    color: white;
+}
+
+.avatar {
+    background: white;
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.avatar > img {
+    height: 100%;
+    width: 75%;
+    margin: 0 auto;
+    display: block;
+}
+
+.tutor-info {
+    padding-top: 25px;
     color: white;
 }
