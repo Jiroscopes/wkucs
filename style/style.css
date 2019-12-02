@@ -129,3 +129,7 @@ nav {
 .selected {
     color: #b01e24 !important;
 }
+
+::selection {
+    background: #b01e24;
+}

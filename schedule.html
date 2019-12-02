@@ -89,16 +89,60 @@
     </style>
 
     <script>
+        var first = (new Date().getMonth() + 1) + '/' + (new Date().getDate() > 9 || new Date().getDate() == 0 ? new Date().getDate() : '0' + new Date().getDate()) + '/' + new Date().getFullYear();
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4',
-            value: (new Date().getMonth() + 1) + '/' + (new Date().getDate() > 9 || new Date().getDate() == 0 ? new Date().getDate() : '0' + new Date().getDate()) + '/' + new Date().getFullYear(),
+            value: first,
             minDate: new Date(2019, 11, 1),
             maxDate: new Date(2019, 11, 31),
             callback: call,
         });
 
+        var sessions = {
+            '12/02/2019': [{
+                name: 'John Doe',
+                time: '1:00pm - 4:00pm',
+                location: 'IEB 301'
+            },
+            {
+                name: 'John Smith',
+                time: '11:30am - 2:30pm',
+                location: 'IEB 301'
+            }
+        ]
+        };
+
+        var last = '';
+        call(first);
+
         function call(data) {
-            console.log(data);
+            if (last == data) {
+                return;
+            }
+
+            const session = sessions[data];
+            if (session) {
+                var elem = document.getElementById('test');
+
+                for (let i = 0; i < elem.children.length; i++) {
+                    elem.children[i].remove();
+                }
+
+                
+                for (let i = 0; i < session.length; i++) {
+                    var to_insert = document.createElement("div");
+
+                    to_insert.classList.add('col-4');
+                    to_insert.style.backgroundColor = '#b01e24';
+                    to_insert.style.color = 'white';
+                    to_insert.style.marginBottom = '10px';
+                    to_insert.innerHTML = `${session[i].name}<br>${session[i].location}<br>${session[i].time}`;
+
+                    elem.appendChild(to_insert);
+                }
+            }
+
+            last = data;
         }
     </script>
 </body>
