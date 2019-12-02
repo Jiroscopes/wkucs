@@ -107,8 +107,8 @@ nav {
 }
 
 .avatar > img {
-    height: 100%;
-    width: 75%;
+    height: 130%;
+    width: 105%;
     margin: 0 auto;
     display: block;
 }
@@ -128,4 +128,9 @@ nav {
 
 .selected {
     color: #b01e24 !important;
+}
+
+.submit-custom{
+    background-color: #6e1518 !important;
+
 }
