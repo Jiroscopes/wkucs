@@ -28,6 +28,9 @@
             <li class="nav-item">
                 <a class="nav-link active" href="#">Schedule</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="links.html">Links</a>
+            </li>
         </ul>
     </nav>
 
@@ -57,9 +60,11 @@
         </div>
         <div class="row content-padding">
             <div class="col-12">
-                <div class="monthly" id="mycalendar"></div>
+                <input id="datepicker" width="276" />
             </div>
         </div>
+
+        <div id="test"></div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -74,11 +79,21 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
-    <script type="text/javascript" src="scripts/Monthly/js/jquery.js"></script>
-    <script type="text/javascript" src="scripts/Monthly/js/monthly.js"></script>
-    <script type="text/javascript">
-        $(window).load( function() {
-            $('#mycalendar').monthly();
+    <script src="scripts/datepicker.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    
+    <style>
+        .selected {
+            color: #b01e24 !important;
+        }
+    </style>
+
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+            value: (new Date().getMonth() + 1) + '/' + (new Date().getDate() > 9 || new Date().getDate() == 0 ? new Date().getDate() : '0' + new Date().getDate()) + '/' + new Date().getFullYear(),
+            minDate: new Date(2019, 11, 1),
+            maxDate: new Date(2019, 11, 31)
         });
     </script>
 </body>

@@ -125,3 +125,7 @@ nav {
 .nav-link:hover {
     color: #b01e24;
 }
+
+.selected {
+    color: #b01e24 !important;
+}
