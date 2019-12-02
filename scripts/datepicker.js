@@ -3489,6 +3489,7 @@ gj.widget = function () {
             width: void 0,
             minDate: void 0,
             maxDate: void 0,
+            callback: function() {},
             format: "mm/dd/yyyy",
             uiLibrary: "materialdesign",
             iconsLibrary: "materialicons",
@@ -3806,9 +3807,7 @@ gj.widget = function () {
         }
     }, gj.datepicker.events = {
         change: function (a) {
-            console.log(a.value());
-
-            const to_insert = document.getElementById('test');
+            a.getHTMLConfig().callback(a.value());
 
             return a.triggerHandler("change")
         },
