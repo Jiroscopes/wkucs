@@ -92,8 +92,13 @@
             uiLibrary: 'bootstrap4',
             value: (new Date().getMonth() + 1) + '/' + (new Date().getDate() > 9 || new Date().getDate() == 0 ? new Date().getDate() : '0' + new Date().getDate()) + '/' + new Date().getFullYear(),
             minDate: new Date(2019, 11, 1),
-            maxDate: new Date(2019, 11, 31)
+            maxDate: new Date(2019, 11, 31),
+            callback: call,
         });
+
+        function call(data) {
+            console.log(data);
+        }
     </script>
 </body>
 
