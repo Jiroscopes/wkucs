@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="scripts/Monthly/css/monthly.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -119,15 +118,18 @@
                 return;
             }
 
+            var elem = document.getElementById('test');
+            var list = document.getElementById('list');
+            if (list) {
+                list.remove();
+            }
+
+            list = document.createElement('div');
+            list.id = 'list';
+            elem.appendChild(list);
+
             const session = sessions[data];
             if (session) {
-                var elem = document.getElementById('test');
-
-                for (let i = 0; i < elem.children.length; i++) {
-                    elem.children[i].remove();
-                }
-
-                
                 for (let i = 0; i < session.length; i++) {
                     var to_insert = document.createElement("div");
 
@@ -135,10 +137,18 @@
                     to_insert.style.backgroundColor = '#b01e24';
                     to_insert.style.color = 'white';
                     to_insert.style.marginBottom = '10px';
+                    to_insert.style.paddingTop = '10px';
+                    to_insert.style.paddingBottom = '10px';
                     to_insert.innerHTML = `${session[i].name}<br>${session[i].location}<br>${session[i].time}`;
 
-                    elem.appendChild(to_insert);
+                    list.appendChild(to_insert);
                 }
+            } else {
+                var to_insert = document.createElement("div");
+
+                to_insert.innerHTML = 'Nothing scheduled today!';
+
+                list.appendChild(to_insert);
             }
 
             last = data;
